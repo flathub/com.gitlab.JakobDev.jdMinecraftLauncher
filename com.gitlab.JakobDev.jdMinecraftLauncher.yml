@@ -5,13 +5,16 @@ sdk: org.kde.Sdk
 base: io.qt.qtwebengine.BaseApp
 base-version: "6.2"
 command: jdMinecraftLauncher
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk17
+  - org.freedesktop.Sdk.Extension.openjdk8
 finish-args:
-  - --socket=x11
+  - --socket=fallback-x11
+  - --socket=wayland
   - --share=ipc
   - --device=dri
-  - --socket=wayland
   - --share=network
-  - --filesystem=host
+  - --persist=.minecraft
   - --socket=pulseaudio
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
 
@@ -40,15 +43,9 @@ modules:
     build-commands:
       - pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST .
       - install -Dm644 jdMinecraftLauncher/Icon.svg /app/share/icons/hicolor/scalable/apps/com.gitlab.JakobDev.jdMinecraftLauncher.svg
-      - install -Dm644 com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml /app/share/appdata/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
-      - install -Dm644 com.gitlab.JakobDev.jdMinecraftLauncher.desktop /app/share/applications/com.gitlab.JakobDev.jdMinecraftLauncher.desktop
+      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml /app/share/metainfo/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
+      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.desktop /app/share/applications/com.gitlab.JakobDev.jdMinecraftLauncher.desktop
     sources:
-      - type: archive
-        url: https://gitlab.com/JakobDev/jdMinecraftLauncher/-/archive/3.0/jdMinecraftLauncher-3.0.tar.gz
-        sha256: b7e15059147d3480fa408789c850f252c38e7624fb8bb30f86b0784c4c1b76ae
-
-      - type: file
-        path: com.gitlab.JakobDev.jdMinecraftLauncher.desktop
-
-      - type: file
-        path: com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
+      - type: git
+        url: https://gitlab.com/JakobDev/jdMinecraftLauncher.git
+        tag: "3.1"
