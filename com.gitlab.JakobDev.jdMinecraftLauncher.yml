@@ -14,8 +14,8 @@ finish-args:
   - --share=ipc
   - --device=dri
   - --share=network
-  - --persist=.minecraft
   - --socket=pulseaudio
+  - --filesystem=~/.minecraft:create
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
 
 modules:
