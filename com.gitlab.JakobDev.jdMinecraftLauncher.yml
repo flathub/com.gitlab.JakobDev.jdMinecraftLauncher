@@ -23,6 +23,21 @@ modules:
   - pyqt6-webengine.yml
   - python3-modules.json
 
+  - name: openjdk8
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk8/install.sh
+      - mkdir -p /app/jvm
+      - mv /app/jre /app/jvm/openjdk8
+
+  - name: openjdk17
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk17/install.sh
+      - mkdir -p /app/jvm
+      - mv /app/jre /app/jvm/openjdk17
+      - ln -s /app/jvm/openjdk17/bin/java /app/bin/java
+
   - name: gamemode
     buildsystem: meson
     config-opts: &gamemode_opts
