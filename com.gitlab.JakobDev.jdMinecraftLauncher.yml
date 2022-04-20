@@ -2,9 +2,11 @@ app-id: com.gitlab.JakobDev.jdMinecraftLauncher
 runtime: org.kde.Platform
 runtime-version: "6.2"
 sdk: org.kde.Sdk
-base: io.qt.qtwebengine.BaseApp
+base: com.riverbankcomputing.PyQt.BaseApp
 base-version: "6.2"
 command: jdMinecraftLauncher
+cleanup-commands:
+  - /app/cleanup-BaseApp.sh
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk17
   - org.freedesktop.Sdk.Extension.openjdk8
@@ -19,8 +21,6 @@ finish-args:
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
 
 modules:
-  - pyqt6.yml
-  - pyqt6-webengine.yml
   - python3-modules.json
 
   - name: openjdk8
