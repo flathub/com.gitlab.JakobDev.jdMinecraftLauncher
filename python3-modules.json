@@ -121,8 +121,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e8/86/3425e3e74493728ce24af5b214492a2fa97c52f01efe2e94889b48d940f2/minecraft_launcher_lib-4.5-py3-none-any.whl",
-                    "sha256": "146cbb27d3a998da01eea6f0958f4d1d2875992b880105ed46688a6aa845c670",
+                    "url": "https://files.pythonhosted.org/packages/91/37/acd3d43ebde76da596fbc6158d7172ef4c4c4dea5574061895fbeeedb5bb/minecraft_launcher_lib-4.6-py3-none-any.whl",
+                    "sha256": "8bd61b06e8fb194edc9222f6c850776b3870ec06c20e82e3884f9ffbdf3dd125",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "minecraft_launcher_lib",
