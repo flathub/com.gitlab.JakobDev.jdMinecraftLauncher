@@ -64,3 +64,8 @@ modules:
       - type: git
         url: https://gitlab.com/JakobDev/jdMinecraftLauncher.git
         tag: "3.1"
+        commit: 0bac7a9d7d375a16e56d31ccad27c1dc12d6f4d4
+        x-checker-data:
+          type: git
+          url: https://gitlab.com/JakobDev/jdMinecraftLauncher.git
+          tag-pattern: (.+)
