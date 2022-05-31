@@ -40,7 +40,7 @@ modules:
 
   - name: gamemode
     buildsystem: meson
-    config-opts: &gamemode_opts
+    config-opts:
       - -Dwith-systemd=false
       - -Dwith-daemon=false
       - -Dwith-examples=false
@@ -48,10 +48,14 @@ modules:
       - -Dwith-sd-bus-provider=no-daemon
     post-install:
       - install -Dm755 ../data/gamemoderun -t /app/bin
-    sources: &gamemode_sources
-      - type: archive
-        url: https://github.com/FeralInteractive/gamemode/releases/download/1.6.1/gamemode-1.6.1.tar.xz
-        sha256: 10c2a3f142eae472f5a09e42616e38c666c05b25ca3e61e562a543bb3fda66c5
+    sources:
+      - type: git
+        url: https://github.com/FeralInteractive/gamemode.git
+        tag: "1.6.1"
+        commit: b11d2912e280acb87d9ad114d6c7cd8846c4ef02
+        x-checker-data:
+          type: git
+          tag-pattern: (.+)
 
   - name: jdMinecraftLauncher
     buildsystem: simple
@@ -67,5 +71,4 @@ modules:
         commit: 0bac7a9d7d375a16e56d31ccad27c1dc12d6f4d4
         x-checker-data:
           type: git
-          url: https://gitlab.com/JakobDev/jdMinecraftLauncher.git
           tag-pattern: (.+)
