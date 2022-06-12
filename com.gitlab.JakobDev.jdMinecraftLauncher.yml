@@ -1,9 +1,9 @@
 app-id: com.gitlab.JakobDev.jdMinecraftLauncher
 runtime: org.kde.Platform
-runtime-version: "6.2"
+runtime-version: '6.2'
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: "6.2"
+base-version: '6.2'
 command: jdMinecraftLauncher
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
@@ -51,7 +51,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/FeralInteractive/gamemode.git
-        tag: "1.6.1"
+        tag: 1.6.1
         commit: b11d2912e280acb87d9ad114d6c7cd8846c4ef02
         x-checker-data:
           type: git
@@ -62,13 +62,14 @@ modules:
     build-commands:
       - pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST .
       - install -Dm644 jdMinecraftLauncher/Icon.svg /app/share/icons/hicolor/scalable/apps/com.gitlab.JakobDev.jdMinecraftLauncher.svg
-      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml /app/share/metainfo/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
+      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
+        /app/share/metainfo/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
       - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.desktop /app/share/applications/com.gitlab.JakobDev.jdMinecraftLauncher.desktop
     sources:
       - type: git
         url: https://gitlab.com/JakobDev/jdMinecraftLauncher.git
-        tag: "3.1"
-        commit: 0bac7a9d7d375a16e56d31ccad27c1dc12d6f4d4
+        tag: '3.2'
+        commit: c2c12be4345987fdf99015247655894ddbbc2bcd
         x-checker-data:
           type: git
           tag-pattern: (.+)
