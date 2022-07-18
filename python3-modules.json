@@ -60,6 +60,10 @@
                         "packagetype": "bdist_wheel"
                     }
                 }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
             ]
         },
         {
@@ -129,6 +133,10 @@
                         "packagetype": "bdist_wheel"
                     }
                 }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
             ]
         },
         {
@@ -148,6 +156,32 @@
                         "packagetype": "bdist_wheel"
                     }
                 }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
+            ]
+        },
+        {
+            "name": "python3-setproctitle",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setproctitle\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/78/9a/cf6bf4c472b59aef3f3c0184233eeea8938d3366bcdd93d525261b1b9e0a/setproctitle-1.2.3.tar.gz",
+                    "sha256": "ecf28b1c07a799d76f4326e508157b71aeda07b84b90368ea451c0710dbd32c0",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "setproctitle"
+                    }
+                }
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/man/man1"
             ]
         }
     ]

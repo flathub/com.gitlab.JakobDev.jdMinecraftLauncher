@@ -19,6 +19,8 @@ finish-args:
   - --socket=pulseaudio
   - --filesystem=~/.minecraft:create
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
+  - --filesystem=xdg-data/applications:create
+  - --filesystem=xdg-desktop:create
 
 modules:
   - python3-modules.json
@@ -61,15 +63,14 @@ modules:
     buildsystem: simple
     build-commands:
       - pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST .
-      - install -Dm644 jdMinecraftLauncher/Icon.svg /app/share/icons/hicolor/scalable/apps/com.gitlab.JakobDev.jdMinecraftLauncher.svg
-      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
-        /app/share/metainfo/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
-      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.desktop /app/share/applications/com.gitlab.JakobDev.jdMinecraftLauncher.desktop
+      - install -Dm644 jdMinecraftLauncher/Icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/com.gitlab.JakobDev.jdMinecraftLauncher.svg
+      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml -t $FLATPAK_DEST/share/metainfo
+      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.desktop -t $FLATPAK_DEST/share/applications
+      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.service -t $FLATPAK_DEST/share/dbus-1/services
     sources:
       - type: git
         url: https://gitlab.com/JakobDev/jdMinecraftLauncher.git
-        tag: '3.2'
-        commit: c2c12be4345987fdf99015247655894ddbbc2bcd
+        tag: '4.0'
+        commit: 2691fb53f29ec02f9f5962fa7bb746b9c14301e1
         x-checker-data:
           type: git
-          tag-pattern: (.+)
