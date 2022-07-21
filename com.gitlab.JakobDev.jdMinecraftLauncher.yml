@@ -53,8 +53,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/FeralInteractive/gamemode.git
-        tag: 1.6.1
-        commit: b11d2912e280acb87d9ad114d6c7cd8846c4ef02
+        tag: '1.7'
+        commit: 4dc99dff76218718763a6b07fc1900fa6d1dafd9
         x-checker-data:
           type: git
           tag-pattern: (.+)
@@ -64,7 +64,8 @@ modules:
     build-commands:
       - pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST .
       - install -Dm644 jdMinecraftLauncher/Icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/com.gitlab.JakobDev.jdMinecraftLauncher.svg
-      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml -t $FLATPAK_DEST/share/metainfo
+      - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
+        -t $FLATPAK_DEST/share/metainfo
       - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.desktop -t $FLATPAK_DEST/share/applications
       - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.service -t $FLATPAK_DEST/share/dbus-1/services
     sources:
