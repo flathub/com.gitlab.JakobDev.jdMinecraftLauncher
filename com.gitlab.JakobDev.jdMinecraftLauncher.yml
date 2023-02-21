@@ -62,7 +62,7 @@ modules:
   - name: jdMinecraftLauncher
     buildsystem: simple
     build-commands:
-      - pip3 install --no-deps --prefix=$FLATPAK_DEST .
+      - pip3 install --no-deps --no-build-isolation --prefix=$FLATPAK_DEST .
       - install -Dm644 jdMinecraftLauncher/Icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/com.gitlab.JakobDev.jdMinecraftLauncher.svg
       - install -Dm644 deploy/com.gitlab.JakobDev.jdMinecraftLauncher.metainfo.xml
         -t $FLATPAK_DEST/share/metainfo
