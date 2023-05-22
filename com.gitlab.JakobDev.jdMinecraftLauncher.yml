@@ -71,7 +71,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/JakobDev/jdMinecraftLauncher.git
-        tag: '4.0'
-        commit: 2691fb53f29ec02f9f5962fa7bb746b9c14301e1
+        tag: '4.1'
+        commit: ffc73f0994c035b626a444338e78fd32552d4b0e
         x-checker-data:
           type: git
