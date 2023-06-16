@@ -1,3 +1,5 @@
 {
+    "end-of-life": "The application has been renamed to page.codeberg.JakobDev.jdMinecraftLauncher",
+    "end-of-life-rebase": "page.codeberg.JakobDev.jdMinecraftLauncher",
     "only-arches": ["x86_64"]
 } 
